@@ -1,4 +1,5 @@
 
+
 library("readr")
 library("ggplot2")
 library("tidyverse")
@@ -6,7 +7,7 @@ library("reshape2")
 library("plotly")
 library("RColorBrewer")
 library("deSolve")
-
+library("gridExtra")
 
 ## Create an SIR function
 sir <- function(time, state, parameters) {
