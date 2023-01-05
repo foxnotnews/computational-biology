@@ -32,7 +32,7 @@ dv=seq(0.01,0.30, length.out=4)
 plots=list()
 for (n in 1:length(dv)){
   
-  ## beta: infection parameter; gamma: recovery parameter
+  ## beta: infection parameter; gamma: recovery parameter, sigma: resusceptibility parameter
   parameters <- c(beta = 1.5, gamma = 0.5 , sigma=0.2,dv=dv[n])
   ## Solve using ode (General Solver for Ordinary Differential Equations)
   out <- ode(y = init, times = times, func = sir, parms = parameters)
