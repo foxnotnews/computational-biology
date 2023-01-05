@@ -1,5 +1,4 @@
-
-
+#libraries
 library("readr")
 library("ggplot2")
 library("tidyverse")
@@ -27,12 +26,13 @@ init<- c(S = 1-1e-6, I = 1e-6, R = 0.0)
 ## Time frame
 times      <- seq(0, 200, by = 0.1)
 
+#rescusceptibility parameter
 sigma=seq(0.02,0.3, length.out=4)
 
 plots=list()
 for (n in 1:length(sigma)){
   
-  ## beta: infection parameter; gamma: recovery parameter
+  ## beta: infection parameter; gamma: recovery parameter, sigma:rescusceptibility parameter
   parameters <- c(beta = 1.5, gamma = 0.5 , sigma=sigma[n])
   ## Solve using ode (General Solver for Ordinary Differential Equations)
   out <- ode(y = init, times = times, func = sir, parms = parameters)
