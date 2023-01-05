@@ -1,5 +1,4 @@
-
-
+#libraries
 library("readr")
 library("ggplot2")
 library("tidyverse")
@@ -27,6 +26,7 @@ init<- c(S = 1-1e-6, I = 1e-6, R = 0.0)
 ## Time frame
 times      <- seq(0, 200, by = 0.01)
 
+#vaccination rate
 dv=seq(0.01,0.30, length.out=4)
 
 plots=list()
